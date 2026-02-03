@@ -1,0 +1,59 @@
+---
+const projects = [
+    {
+        title: "Conocidos",
+        status: "Finished",
+        statusColor: "text-green-400",
+        description: "Multiplayer Game Kahoot style. Fun and interactive.",
+        tags: ["React", "Tailwind", "MySQL", "Node.js"],
+        img: "/project1.jpg" // Pon una imagen en public
+    },
+    {
+        title: "Benkyou",
+        status: "In development",
+        statusColor: "text-yellow-400",
+        description: "Application to study Japanese Kanjis.",
+        tags: ["React", "Tailwind", "TypeScript"],
+        img: "/project2.jpg" 
+    }
+];
+---
+
+<section id="projects" class="py-20 container mx-auto px-4 max-w-5xl">
+    <span class="text-sky-400 font-medium">My work</span>
+    <h2 class="text-4xl font-bold mb-10">Projects</h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+        {projects.map(project => (
+            <article class="bg-[#161b22] rounded-xl overflow-hidden border border-gray-800 hover:border-sky-500/50 transition group">
+                <div class="h-48 bg-gray-800 relative overflow-hidden">
+                   <div class="absolute inset-0 bg-gradient-to-t from-[#161b22] to-transparent opacity-60"></div>
+                   <div class="flex items-center justify-center h-full text-gray-600">Project Preview</div>
+                </div>
+                
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-1">{project.title}</h3>
+                            <span class={`text-xs font-medium ${project.statusColor} flex items-center gap-1`}>
+                                <span class={`w-2 h-2 rounded-full bg-current`}></span> {project.status}
+                            </span>
+                        </div>
+                        <div class="flex gap-2">
+                             <a href="#" class="p-2 bg-gray-800 rounded hover:bg-gray-700 transition" title="Code">&lt;/&gt;</a>
+                             <a href="#" class="p-2 bg-gray-800 rounded hover:bg-gray-700 transition" title="Live">↗</a>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-400 text-sm mb-6 h-12">{project.description}</p>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        {project.tags.map(tag => (
+                            <span class="px-2 py-1 bg-gray-800 text-sky-200 text-xs rounded border border-sky-500/20">{tag}</span>
+                        ))}
+                    </div>
+                </div>
+            </article>
+        ))}
+    </div>
+</section>
