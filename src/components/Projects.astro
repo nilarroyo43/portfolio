@@ -1,55 +1,79 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 const projects = [
     {
         title: "Conocidos",
         status: "Finished",
-        statusColor: "text-green-400",
-        description: "Multiplayer Game Kahoot style. Fun and interactive.",
+        statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
+        description: "Multiplayer Game Kahoot style. A fully interactive platform for quizzes with real-time score tracking.",
         tags: ["React", "Tailwind", "MySQL", "Node.js"],
-        img: "/project1.jpg" // Pon una imagen en public
+        repoLink: "#",
+        demoLink: "#"
     },
     {
         title: "Benkyou",
         status: "In development",
-        statusColor: "text-yellow-400",
-        description: "Application to study Japanese Kanjis.",
+        statusColor: "text-amber-400 bg-amber-400/10 border-amber-400/20",
+        description: "Application to study Japanese Kanjis with spaced repetition system and stroke order visualization.",
         tags: ["React", "Tailwind", "TypeScript"],
-        img: "/project2.jpg" 
+        repoLink: "#",
+        demoLink: "#"
+    },
+    {
+        title: "ReWikiDish",
+        status: "In development",
+        statusColor: "text-amber-400 bg-amber-400/10 border-amber-400/20",
+        description: "Application to select your ingredients and get recipes with AI recommendations.",
+        tags: ["Flutter", "Tailwind", "python", "Django"],
+        repoLink: "#",
+        demoLink: "#"
     }
 ];
 ---
 
-<section id="projects" class="py-20 container mx-auto px-4 max-w-5xl">
-    <span class="text-sky-400 font-medium">My work</span>
-    <h2 class="text-4xl font-bold mb-10">Projects</h2>
+<section id="projects" class="py-28 container mx-auto px-6 max-w-7xl">
+    <div class="mb-20">
+        <span class="text-sky-400 font-bold tracking-widest uppercase text-sm">My work</span>
+        <h2 class="text-5xl md:text-6xl font-bold mt-2 mb-6">Projects</h2>
+    </div>
 
-    <div class="grid md:grid-cols-2 gap-8">
+    <div class="grid lg:grid-cols-2 gap-12">
         {projects.map(project => (
-            <article class="bg-[#161b22] rounded-xl overflow-hidden border border-gray-800 hover:border-sky-500/50 transition group">
-                <div class="h-48 bg-gray-800 relative overflow-hidden">
-                   <div class="absolute inset-0 bg-gradient-to-t from-[#161b22] to-transparent opacity-60"></div>
-                   <div class="flex items-center justify-center h-full text-gray-600">Project Preview</div>
+            <article class="bg-[#161b22] rounded-3xl overflow-hidden border border-gray-800 hover:border-sky-500/50 transition-all duration-500 group shadow-lg hover:shadow-sky-500/10 flex flex-col">
+                <div class="h-60 bg-gray-800 relative overflow-hidden group">
+                   <div class="absolute inset-0 bg-gradient-to-t from-[#161b22] to-transparent opacity-60 z-10"></div>
+                   <div class="w-full h-full bg-[#1c2128] flex items-center justify-center text-gray-700 group-hover:scale-105 transition duration-700">
+                        <Icon name="tabler:photo" class="w-24 h-24 opacity-20" />
+                   </div>
+                   <div class="absolute top-5 left-5 z-20">
+                        <span class={`px-3 py-1.5 rounded-full text-s font-bold border ${project.statusColor} backdrop-blur-xl shadow-lg`}>
+                            {project.status}
+                        </span>
+                   </div>
                 </div>
                 
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-1">{project.title}</h3>
-                            <span class={`text-xs font-medium ${project.statusColor} flex items-center gap-1`}>
-                                <span class={`w-2 h-2 rounded-full bg-current`}></span> {project.status}
-                            </span>
-                        </div>
-                        <div class="flex gap-2">
-                             <a href="#" class="p-2 bg-gray-800 rounded hover:bg-gray-700 transition" title="Code">&lt;/&gt;</a>
-                             <a href="#" class="p-2 bg-gray-800 rounded hover:bg-gray-700 transition" title="Live">↗</a>
+                <div class="p-8 md:p-6 flex flex-col flex-grow">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-3xl font-bold text-white group-hover:text-sky-400 transition-colors">{project.title}</h3>
+                        
+                        <div class="flex gap-3">
+                             <a href={project.repoLink} target="_blank" class="p-2.5 bg-gray-800 rounded-lg hover:bg-gray-700 text-gray-300 hover:text-white transition border border-gray-700" title="Code">
+                                <Icon name="tabler:brand-github" class="w-6 h-6" />
+                             </a>
+                             <a href={project.demoLink} target="_blank" class="p-2.5 bg-sky-600/10 text-sky-400 rounded-lg hover:bg-sky-600/20 transition border border-sky-600/20" title="Live Demo">
+                                <Icon name="tabler:external-link" class="w-6 h-6" />
+                             </a>
                         </div>
                     </div>
                     
-                    <p class="text-gray-400 text-sm mb-6 h-12">{project.description}</p>
+                    <p class="text-gray-300 text-xl mb-8 leading-relaxed font-light">{project.description}</p>
                     
-                    <div class="flex flex-wrap gap-2">
+                    <div class="flex flex-wrap gap-2 mt-auto">
                         {project.tags.map(tag => (
-                            <span class="px-2 py-1 bg-gray-800 text-sky-200 text-xs rounded border border-sky-500/20">{tag}</span>
+                            <span class="px-3 py-1 bg-gray-800/50 text-sky-200/80 text-sm font-medium rounded-md border border-gray-700/50">
+                                {tag}
+                            </span>
                         ))}
                     </div>
                 </div>

@@ -1,55 +1,69 @@
-<section id="about" class="py-20 container mx-auto px-4 max-w-5xl">
-    <div class="grid md:grid-cols-2 gap-12">
+---
+import { Icon } from 'astro-icon/components';
+---
+<section id="about" class="py-28 container mx-auto px-6 max-w-7xl">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
         
-        <div>
-            <span class="text-sky-400 font-medium">About me</span>
-            <h2 class="text-4xl font-bold mb-6">Who am I?</h2>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                I'm a developer with a love for creating engaging and user-friendly web applications. My journey began in college while studying Multimedia...
-            </p>
-            <p class="text-gray-400 leading-relaxed">
-                With a strong foundation in HTML, CSS, and JavaScript, I enjoy building responsive and accessible websites.
-            </p>
+        <div class="space-y-8">
+            <span class="text-sky-400 font-bold tracking-widest uppercase text-sm">About me</span>
+            <h2 class="text-5xl md:text-6xl font-bold leading-tight">Who am I?</h2>
+            <div class="text-gray-300 text-lg md:text-2xl space-y-6 leading-relaxed font-light">
+                <p>
+                    I'm a developer with a love for creating engaging and user-friendly web applications. My journey began in college while studying Multimedia, where I discovered my passion for coding.
+                </p>
+                <p>
+                    Since then, I've been dedicated to honing my skills. With a strong foundation in <strong class="text-white font-medium">HTML, CSS, and JavaScript</strong>, I enjoy building responsive and accessible websites.
+                </p>
+            </div>
         </div>
 
-        <div class="space-y-4">
-            <h3 class="text-2xl font-bold mb-6">What I Bring to the Table</h3>
+        <div class="space-y-4 mt-2">
+            <h3 class="text-4xl font-bold mb-8">What I Bring to the Table</h3>
             
-            <details class="group bg-gray-900 rounded-lg p-4 cursor-pointer open:bg-gray-800 transition-colors">
-                <summary class="flex justify-between items-center font-semibold list-none">
-                    <span class="flex items-center gap-2">🖥️ Frontend</span>
-                    <span class="transition-transform group-open:rotate-180">▼</span>
+            <details class="group bg-[#161b22] border border-gray-800 rounded-2xl overflow-hidden cursor-pointer open:border-sky-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/5">
+                <summary class="flex justify-between items-center p-6 font-semibold list-none hover:bg-gray-800/50 transition">
+                    <span class="flex items-center gap-4 text-2xl">
+                        <span class="p-2 bg-purple-500/10 rounded-xl text-purple-400"><Icon name="simple-icons:react" class="w-6 h-6" /></span>
+                        Frontend
+                    </span>
+                    <span class="transition-transform duration-200 group-open:rotate-180 text-gray-500"><Icon name="tabler:chevron-down" class="w-6 h-6" /></span>
                 </summary>
-                <div class="mt-4 text-gray-400 pl-6 text-sm">
-                    <ul class="list-disc space-y-2">
+                <div class="px-6 pb-6 text-gray-400 pl-20 text-lg">
+                    <ul class="space-y-2 list-disc marker:text-purple-500">
                         <li>React, Vue, Astro components</li>
                         <li>Responsive Design with Tailwind</li>
-                        <li>State Management</li>
+                        <li>State Management (Redux, Zustand)</li>
                     </ul>
                 </div>
             </details>
 
-            <details class="group bg-gray-900 rounded-lg p-4 cursor-pointer open:bg-gray-800 transition-colors">
-                <summary class="flex justify-between items-center font-semibold list-none">
-                    <span class="flex items-center gap-2">⚙️ Backend</span>
-                    <span class="transition-transform group-open:rotate-180">▼</span>
+            <details class="group bg-[#161b22] border border-gray-800 rounded-2xl overflow-hidden cursor-pointer open:border-sky-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/5">
+                <summary class="flex justify-between items-center p-6 font-semibold list-none hover:bg-gray-800/50 transition">
+                    <span class="flex items-center gap-4 text-2xl">
+                        <span class="p-2 bg-blue-500/10 rounded-xl text-blue-400"><Icon name="simple-icons:docker" class="w-6 h-6" /></span>
+                        Backend
+                    </span>
+                    <span class="transition-transform duration-200 group-open:rotate-180 text-gray-500"><Icon name="tabler:chevron-down" class="w-6 h-6" /></span>
                 </summary>
-                <div class="mt-4 text-gray-400 pl-6 text-sm">
-                    <ul class="list-disc space-y-2">
-                        <li>API integration and consumption</li>
-                        <li>Docker for development and deployment</li>
-                        <li>Node.js & Express</li>
+                <div class="px-6 pb-6 text-gray-400 pl-20 text-lg">
+                    <ul class="space-y-2 list-disc marker:text-blue-500">
+                        <li>API integration (REST/GraphQL)</li>
+                        <li>Docker containerization</li>
+                        <li>Node.js & PostgresSQL</li>
                     </ul>
                 </div>
             </details>
 
-            <details class="group bg-gray-900 rounded-lg p-4 cursor-pointer open:bg-gray-800 transition-colors">
-                <summary class="flex justify-between items-center font-semibold list-none">
-                    <span class="flex items-center gap-2">🎨 UI Design</span>
-                    <span class="transition-transform group-open:rotate-180">▼</span>
+            <details class="group bg-[#161b22] border border-gray-800 rounded-2xl overflow-hidden cursor-pointer open:border-sky-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/5">
+                <summary class="flex justify-between items-center p-6 font-semibold list-none hover:bg-gray-800/50 transition">
+                    <span class="flex items-center gap-4 text-2xl">
+                        <span class="p-2 bg-pink-500/10 rounded-xl text-pink-400"><Icon name="simple-icons:figma" class="w-6 h-6" /></span>
+                        UI Design
+                    </span>
+                    <span class="transition-transform duration-200 group-open:rotate-180 text-gray-500"><Icon name="tabler:chevron-down" class="w-6 h-6" /></span>
                 </summary>
-                <div class="mt-4 text-gray-400 pl-6 text-sm">
-                    <p>Figma prototyping and accessible user interfaces.</p>
+                <div class="px-6 pb-6 text-gray-400 pl-20 text-lg">
+                    <p>Figma prototyping and accessible interfaces.</p>
                 </div>
             </details>
         </div>

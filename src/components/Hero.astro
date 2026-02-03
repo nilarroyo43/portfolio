@@ -1,48 +1,69 @@
-<section id="home" class="min-h-screen flex flex-col justify-center items-center pt-20 relative overflow-hidden">
+---
+import { Icon } from 'astro-icon/components';
+
+const technologies = [
+    { name: 'Docker', icon: 'simple-icons:docker', color: 'text-blue-500' },
+    { name: 'Git', icon: 'simple-icons:git', color: 'text-orange-600' },
+    { name: 'Astro', icon: 'simple-icons:astro', color: 'text-orange-500' },
+    { name: 'React', icon: 'simple-icons:react', color: 'text-sky-400' },
+    { name: 'Vue', icon: 'simple-icons:vuedotjs', color: 'text-green-500' },
+    { name: 'TypeScript', icon: 'simple-icons:typescript', color: 'text-blue-600' },
+    { name: 'Node.js', icon: 'simple-icons:nodedotjs', color: 'text-green-600' },
+    { name: 'Tailwind', icon: 'simple-icons:tailwindcss', color: 'text-cyan-400' },
+];
+---
+
+<section id="home" class="min-h-screen flex flex-col justify-center items-center pt-20 pb-32 relative overflow-hidden">
     
-    <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center max-w-5xl">
+    <div class="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center max-w-screen-1xl">
         
-        <div class="space-y-4">
+        <div class="space-y-8">
             <div class="flex items-center gap-4">
-                <span class="text-gray-400 text-lg">Hi, I'm Franck Cai</span>
-                <img src="/profile.jpg" alt="Franck" class="w-12 h-12 rounded-full border-2 border-sky-500 md:hidden" />
+                <span class="text-gray-400 text-2xl font-medium tracking-wide">Hi, I'm Nil Arroyo</span>
             </div>
 
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-                Fullstack <br/>
-                <span class="shine-text">Developer</span>
+            <h1 class="text-7xl md:text-9xl font-bold leading-none tracking-tighter">
+                Backend &<br/>
+                <span class="shine-text">AI developer</span>
             </h1>
             
-            <p class="text-gray-400 max-w-md text-lg leading-relaxed">
+            <p class="text-gray-300 max-w-2xl text-2xl leading-relaxed font-light">
                 Redefining ideas into reality through creative problem-solving and a passion for <span class="text-sky-400 font-bold">fullstack</span> development.
             </p>
 
-            <div class="flex gap-4 pt-4">
-                <a href="#" class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition"><img src="https://simpleicons.org/icons/github.svg" class="w-6 h-6 invert" alt="GitHub"/></a>
-                <a href="#" class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition"><img src="https://simpleicons.org/icons/linkedin.svg" class="w-6 h-6 invert" alt="LinkedIn"/></a>
-                <a href="#" class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition"><img src="https://simpleicons.org/icons/gmail.svg" class="w-6 h-6 invert" alt="Email"/></a>
+            <div class="flex gap-6 pt-8">
+                <a href="https://github.com" target="_blank" class="p-4 bg-gray-800/50 border border-gray-700 rounded-2xl hover:bg-gray-700 hover:border-sky-500/50 transition group">
+                    <Icon name="simple-icons:github" class="w-8 h-8 text-gray-300 group-hover:text-white transition" />
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="p-4 bg-gray-800/50 border border-gray-700 rounded-2xl hover:bg-gray-700 hover:border-sky-500/50 transition group">
+                    <Icon name="simple-icons:linkedin" class="w-8 h-8 text-gray-300 group-hover:text-sky-400 transition" />
+                </a>
+                <a href="mailto:nilarroyo43@gmail.com" class="p-4 bg-gray-800/50 border border-gray-700 rounded-2xl hover:bg-gray-700 hover:border-sky-500/50 transition group">
+                    <Icon name="tabler:mail" class="w-8 h-8 text-gray-300 group-hover:text-red-400 transition" />
+                </a>
             </div>
         </div>
 
-        <div class="hidden md:block relative">
-             <img src="/profile.jpg" alt="Franck Cai" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl mx-auto border-4 border-gray-800 shadow-2xl rotate-3 hover:rotate-0 transition duration-500" />
+        <div class="hidden md:block relative w-full flex justify-center">
+             <div class="absolute inset-0 bg-sky-500 blur-[120px] opacity-20 rounded-full pointer-events-none"></div>
+             <img src="/profile.jpg" alt="Franck Cai" class="relative w-[500px] h-[500px] object-cover rounded-[3rem] border border-gray-700 shadow-2xl rotate-3 hover:rotate-0 transition duration-500 bg-gray-800" />
         </div>
     </div>
 
-    <div class="absolute bottom-0 w-full bg-gradient-to-t from-[#0a0a0a] to-transparent pt-20 pb-10 overflow-hidden">
-        <div class="carousel-track flex gap-12 items-center opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {Array(2).fill(['Docker', 'Git', 'Astro', 'React', 'Vue', 'TypeScript', 'Node.js', 'Tailwind']).flat().map((tech) => (
-                <span class="text-xl font-bold whitespace-nowrap flex items-center gap-2">
-                   {/* Aquí podrías poner iconos reales SVG, uso texto por simplicidad */}
-                   &lt;{tech} /&gt; 
-                </span>
-            ))}
+    <div class="absolute bottom-0 w-full bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent pt-32 pb-16 overflow-hidden">
+        <div class="relative w-full flex overflow-x-hidden group">
+            <div class="carousel-track flex gap-24 items-center animate-scroll whitespace-nowrap px-12">
+                {Array(4).fill(technologies).flat().map((tech) => (
+                    <div class="flex flex-col items-center gap-3 transition-transform hover:scale-125 duration-300">
+                        <Icon name={tech.icon} class={`w-20 h-20 ${tech.color} filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300`} />
+                    </div>
+                ))}
+            </div>
         </div>
     </div>
 </section>
 
 <style>
-    /* Efecto de Reflejo (Shine) cada 3 segundos */
     .shine-text {
         background: linear-gradient(90deg, #fff 0%, #38bdf8 50%, #fff 100%);
         background-size: 200% auto;
@@ -50,20 +71,8 @@
         -webkit-text-fill-color: transparent;
         animation: shine 3s linear infinite;
     }
-
-    @keyframes shine {
-        0% { background-position: 0% 50%; }
-        100% { background-position: 200% 50%; }
-    }
-
-    /* Animación del Carrusel */
-    .carousel-track {
-        animation: scroll 20s linear infinite;
-        width: max-content;
-    }
-    
-    @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-    }
+    @keyframes shine { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+    .carousel-track { width: max-content; }
+    .animate-scroll { animation: scroll 60s linear infinite; }
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 </style>

@@ -1,39 +1,40 @@
-<section id="contact" class="py-20 bg-[#050505]">
-    <div class="container mx-auto px-4 max-w-4xl grid md:grid-cols-2 gap-12">
-        <div>
-            <span class="text-sky-400 font-medium">Let's talk</span>
-            <h2 class="text-4xl font-bold mb-6">Contact</h2>
-            <p class="text-gray-400 mb-8">
+---
+import { Icon } from 'astro-icon/components';
+---
+<section id="contact" class="py-40 bg-[#050505]">
+    <div class="container mx-auto px-6 md:px-12 max-w-screen-2xl grid lg:grid-cols-2 gap-24">
+        <div class="space-y-8">
+            <span class="text-sky-400 font-bold tracking-widest uppercase text-lg">Let's talk</span>
+            <h2 class="text-6xl md:text-8xl font-bold">Contact</h2>
+            <p class="text-gray-300 text-2xl font-light leading-relaxed max-w-xl">
                 Let's collaborate and bring your ideas to life—drop me a message!
             </p>
-            <p class="text-gray-400">Location: <span class="text-white font-semibold">Spain, Barcelona</span></p>
-            
-            <div class="flex gap-4 mt-12 opacity-50">
-                <a href="#" class="hover:text-white transition">Github</a>
-                <a href="#" class="hover:text-white transition">LinkedIn</a>
-                <a href="#" class="hover:text-white transition">Email</a>
+            <div class="flex items-center gap-4 text-xl text-gray-400 pt-4">
+                <Icon name="tabler:map-pin" class="w-8 h-8 text-sky-500" />
+                <span>Spain, Barcelona</span>
             </div>
         </div>
 
-        <form class="space-y-4">
-            <div class="flex flex-col gap-1">
-                <input type="text" placeholder="Name" class="bg-[#111] border border-gray-800 p-3 rounded focus:border-sky-500 focus:outline-none text-white transition" />
+        <form class="space-y-6 bg-[#0f1115] p-10 md:p-14 rounded-[3rem] border border-gray-800 shadow-2xl">
+            <div class="flex flex-col gap-3">
+                <label class="text-gray-400 font-medium ml-2">Name</label>
+                <input type="text" class="bg-[#0a0a0a] border border-gray-800 p-5 rounded-2xl focus:border-sky-500 focus:outline-none text-white text-lg transition focus:ring-1 focus:ring-sky-500/50" />
             </div>
-            <div class="flex flex-col gap-1">
-                <input type="email" placeholder="Email" class="bg-[#111] border border-gray-800 p-3 rounded focus:border-sky-500 focus:outline-none text-white transition" />
+            <div class="flex flex-col gap-3">
+                <label class="text-gray-400 font-medium ml-2">Email</label>
+                <input type="email" class="bg-[#0a0a0a] border border-gray-800 p-5 rounded-2xl focus:border-sky-500 focus:outline-none text-white text-lg transition focus:ring-1 focus:ring-sky-500/50" />
             </div>
-            <div class="flex flex-col gap-1">
-                <textarea rows="4" placeholder="Message" class="bg-[#111] border border-gray-800 p-3 rounded focus:border-sky-500 focus:outline-none text-white transition"></textarea>
+            <div class="flex flex-col gap-3">
+                <label class="text-gray-400 font-medium ml-2">Message</label>
+                <textarea rows="5" class="bg-[#0a0a0a] border border-gray-800 p-5 rounded-2xl focus:border-sky-500 focus:outline-none text-white text-lg transition focus:ring-1 focus:ring-sky-500/50"></textarea>
             </div>
-            <button class="w-full bg-[#161b22] border border-gray-700 text-white py-3 rounded hover:bg-gray-800 transition font-medium">Submit</button>
+            <button class="w-full bg-white text-black py-5 rounded-2xl hover:bg-gray-200 transition font-bold text-xl mt-4 flex items-center justify-center gap-2">
+                Send Message <Icon name="tabler:send" />
+            </button>
         </form>
     </div>
 
-    <div class="text-center text-gray-600 text-sm mt-20 pt-10 border-t border-gray-900">
-        <div class="flex justify-center gap-8 mb-4">
-            <span>Built with Astro</span>
-            <span>Styled with TailwindCSS</span>
-            <span>Deployed on Vercel</span>
-        </div>
+    <div class="text-center text-gray-600 text-lg mt-32 border-t border-gray-900 pt-12">
+        <p>&copy; 2024 Franck Cai. Built with Astro & Tailwind.</p>
     </div>
 </section>

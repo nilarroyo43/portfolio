@@ -1,11 +1,82 @@
-<header class="fixed top-0 w-full z-50 flex justify-center py-4">
-    <nav class="bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 flex items-center gap-6 text-sm font-medium shadow-lg">
-        <a href="#home" class="hover:text-sky-400 transition-colors relative group">
-            <span class="text-sky-400 group-hover:opacity-100 absolute -left-3 top-1.5 w-1.5 h-1.5 rounded-full bg-sky-400 opacity-0 transition-opacity"></span>
+<header class="fixed top-0 w-full z-50 flex justify-center py-8">
+    <nav class="bg-[#0f1115]/80 backdrop-blur-xl border border-white/10 rounded-full px-14 py-5 flex items-center gap-16 shadow-2xl shadow-sky-500/5 hover:border-white/20 transition-all duration-300 text-xl">
+        
+        <a href="#home" class="nav-link text-gray-500 hover:text-white transition-colors relative group font-medium" aria-label="Home">
+            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
             Home
         </a>
-        <a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a>
-        <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
-        <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
+
+        <a href="#about" class="nav-link text-gray-500 hover:text-white transition-colors relative group font-medium" aria-label="About">
+            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
+            About
+        </a>
+
+        <a href="#experience" class="nav-link text-gray-500 hover:text-white transition-colors relative group font-medium" aria-label="Experience">
+            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
+            Experience
+        </a>
+
+        <a href="#projects" class="nav-link text-gray-500 hover:text-white transition-colors relative group font-medium" aria-label="Projects">
+            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
+            Projects
+        </a>
+            
+        <a href="#contact" class="nav-link text-gray-500 hover:text-white transition-colors relative group font-medium" aria-label="contact">
+            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
+            Contact
+        </a>
     </nav>
 </header>
+
+<style is:global>
+    html {
+        /* Aumentamos el padding del scroll porque la barra es más alta */
+        scroll-padding-top: 140px; 
+    }
+</style>
+
+<script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px', 
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Desactivar todos
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-gray-500');
+                    const indicator = link.querySelector('.nav-indicator');
+                    if(indicator) {
+                        indicator.classList.remove('opacity-100');
+                        indicator.classList.add('opacity-0');
+                    }
+                });
+
+                // Activar el actual
+                const id = entry.target.getAttribute('id');
+                const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                
+                if (activeLink) {
+                    activeLink.classList.remove('text-gray-500');
+                    activeLink.classList.add('text-white');
+                    const indicator = activeLink.querySelector('.nav-indicator');
+                    if(indicator) {
+                        indicator.classList.remove('opacity-0');
+                        indicator.classList.add('opacity-100');
+                    }
+                }
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
