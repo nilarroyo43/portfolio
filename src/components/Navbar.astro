@@ -1,28 +1,28 @@
-<header class="fixed top-0 w-full z-50 flex justify-center py-8">
-    <nav class="bg-[#0f1115]/80 backdrop-blur-xl border border-white/10 rounded-full px-14 py-5 flex items-center gap-16 shadow-2xl shadow-sky-500/5 hover:border-white/20 transition-all duration-300 text-xl">
+<header class="fixed top-0 w-full z-50 flex justify-center py-6">
+    <nav class="bg-[#0f1115]/80 backdrop-blur-xl border border-white/10 rounded-full px-10 py-4 flex items-center gap-10 shadow-2xl shadow-sky-500/5 hover:border-white/20 transition-all duration-300 text-lg">
         
         <a href="#home" class="nav-link text-gray-500 hover:text-white transition-colors relative group font-medium" aria-label="Home">
-            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
+            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
             Home
         </a>
 
         <a href="#sobre_mi" class="nav-link text-gray-500 hover:text-white transition-colors relative group font-medium" aria-label="sobre_mi">
-            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
+            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
             Sobre mí
         </a>
 
         <a href="#Experiencia" class="nav-link text-gray-500 hover:text-white transition-colors relative group font-medium" aria-label="Experiencia">
-            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
+            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
             Experiencia
         </a>
 
         <a href="#proyectos" class="nav-link text-gray-500 hover:text-white transition-colors relative group font-medium" aria-label="Proyectos">
-            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
+            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
             Proyectos
         </a>
             
         <a href="#contacto" class="nav-link text-gray-500 hover:text-white transition-colors relative group font-medium" aria-label="contacto">
-            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
+            <span class="nav-indicator absolute -left-6 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-sky-400 opacity-0 transition-opacity duration-300"></span>
             Contacto
         </a>
     </nav>
@@ -30,8 +30,8 @@
 
 <style is:global>
     html {
-        /* Aumentamos el padding del scroll porque la barra es más alta */
-        scroll-padding-top: 140px; 
+        /* Ajustamos el scroll padding */
+        scroll-padding-top: 100px; 
     }
 </style>
 
@@ -48,7 +48,6 @@
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Desactivar todos
                 navLinks.forEach(link => {
                     link.classList.remove('text-white');
                     link.classList.add('text-gray-500');
@@ -59,7 +58,6 @@
                     }
                 });
 
-                // Activar el actual
                 const id = entry.target.getAttribute('id');
                 const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
                 

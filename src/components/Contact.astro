@@ -1,56 +1,58 @@
 ---
 import { Icon } from 'astro-icon/components';
 ---
-<section id="contacto" class="py-40 bg-[#050505]">
-    <div class="container mx-auto px-6 md:px-12 max-w-screen-2xl grid lg:grid-cols-2 gap-24">
-        <div class="space-y-8">
-            <span class="text-sky-400 font-bold tracking-widest uppercase text-lg">contactame</span>
-            <h2 class="text-6xl md:text-8xl font-bold">contacto</h2>
-            <p class="text-gray-300 text-2xl font-light leading-relaxed max-w-xl">
-               Estoy buscando mi próxima gran oportunidad para crecer como desarrollador. Si buscas un perfil proactivo y adaptable segun la demanda, hablemos.
+<section id="contacto" class="py-32 bg-[#050505]">
+    <div class="container mx-auto px-6 md:px-12 max-w-screen-xl grid lg:grid-cols-2 gap-16">
+        <div class="space-y-6">
+            <span class="text-sky-400 font-bold tracking-widest uppercase text-sm">contáctame</span>
+            <h2 class="text-5xl md:text-6xl font-bold">Contacto</h2>
+            <p class="text-gray-300 text-xl font-light leading-relaxed max-w-lg">
+               Estoy buscando mi próxima gran oportunidad para crecer como desarrollador. Si buscas un perfil proactivo y adaptable, hablemos.
             </p>
-            <div class="flex items-center gap-4 text-xl text-gray-400 pt-4">
-                <Icon name="tabler:map-pin" class="w-8 h-8 text-sky-500" />
+            
+            <div class="flex items-center gap-3 text-lg text-gray-400 pt-2">
+                <Icon name="tabler:map-pin" class="w-6 h-6 text-sky-500" />
                 <span>España, Barcelona</span>
             </div>
-            <div class="pt-8">
-                <p class="text-gray-400 mb-4 font-medium">Descarga mi CV:</p>
-                <a href="/cv.pdf" download="Nil_Arroyo_CV.pdf" class="inline-block group relative transition-transform hover:scale-105 duration-300">
+
+            <div class="pt-6">
+                <p class="text-gray-400 mb-3 font-medium">Descarga mi CV:</p>
+                <a href="/Nil_Arroyo_CV.pdf" download="Nil_Arroyo_CV.pdf" class="inline-block group relative transition-transform hover:scale-105 duration-300">
                     <img 
                         src="/cv-screenshot.jpg" 
                         alt="Descargar CV" 
-                        class="w-48 rounded-xl shadow-2xl border-2 border-gray-800 group-hover:border-sky-500 transition-colors"
+                        class="w-40 rounded-xl shadow-2xl border-2 border-gray-800 group-hover:border-sky-500 transition-colors"
                     />
                     <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl">
-                        <Icon name="tabler:download" class="w-12 h-12 text-white" />
+                        <Icon name="tabler:download" class="w-10 h-10 text-white" />
                     </div>
                 </a>
             </div>
         </div>
 
         <form action="https://formspree.io/f/xgolwbzp" 
-            method="POST"
-            class="space-y-6 bg-[#0f1115] p-10 md:p-14 rounded-[3rem] border border-gray-800 shadow-2xl">
-            
-            <div class="flex flex-col gap-3">
-                <label class="text-gray-400 font-medium ml-2">Nombre</label>
-                <input required type="text" name="name" class="bg-[#0a0a0a] border border-gray-800 p-5 rounded-2xl focus:border-sky-500 focus:outline-none text-white text-lg transition focus:ring-1 focus:ring-sky-500/50" />
+              method="POST"
+              class="space-y-5 bg-[#0f1115] p-8 md:p-12 rounded-[2.5rem] border border-gray-800 shadow-2xl">
+        
+            <div class="flex flex-col gap-2">
+                <label class="text-gray-400 font-medium ml-2 text-sm">Nombre</label>
+                <input type="text" name="name" required class="bg-[#0a0a0a] border border-gray-800 p-4 rounded-xl focus:border-sky-500 focus:outline-none text-white text-base transition focus:ring-1 focus:ring-sky-500/50" />
             </div>
-            <div class="flex flex-col gap-3">
-                <label class="text-gray-400 font-medium ml-2">Email</label>
-                <input required type="email" name="email" class="bg-[#0a0a0a] border border-gray-800 p-5 rounded-2xl focus:border-sky-500 focus:outline-none text-white text-lg transition focus:ring-1 focus:ring-sky-500/50" />
+            <div class="flex flex-col gap-2">
+                <label class="text-gray-400 font-medium ml-2 text-sm">Email</label>
+                <input type="email" name="email" required class="bg-[#0a0a0a] border border-gray-800 p-4 rounded-xl focus:border-sky-500 focus:outline-none text-white text-base transition focus:ring-1 focus:ring-sky-500/50" />
             </div>
-            <div class="flex flex-col gap-3">
-                <label class="text-gray-400 font-medium ml-2">Mensaje</label>
-                <textarea required rows="5" name="message" class="bg-[#0a0a0a] border border-gray-800 p-5 rounded-2xl focus:border-sky-500 focus:outline-none text-white text-lg transition focus:ring-1 focus:ring-sky-500/50"></textarea>
+            <div class="flex flex-col gap-2">
+                <label class="text-gray-400 font-medium ml-2 text-sm">Mensaje</label>
+                <textarea rows="4" name="message" required class="bg-[#0a0a0a] border border-gray-800 p-4 rounded-xl focus:border-sky-500 focus:outline-none text-white text-base transition focus:ring-1 focus:ring-sky-500/50"></textarea>
             </div>
-            <button type="submit" class="w-full bg-white text-black py-5 rounded-2xl hover:bg-gray-200 transition font-bold text-xl mt-4 flex items-center justify-center gap-2">
+            <button type="submit" class="w-full bg-white text-black py-4 rounded-xl hover:bg-gray-200 transition font-bold text-lg mt-2 flex items-center justify-center gap-2">
                 Enviar Mensaje <Icon name="tabler:send" />
             </button>
         </form>
     </div>
 
-    <div class="text-center text-gray-600 text-lg mt-32 border-t border-gray-900 pt-12">
+    <div class="text-center text-gray-600 text-base mt-24 border-t border-gray-900 pt-8">
         <p>&copy; 2026 Nil Arroyo. Built with Astro & Tailwind.</p>
     </div>
 </section>
