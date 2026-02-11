@@ -1,43 +1,35 @@
-# Astro Starter Kit: Minimal
+# 🚀 Nil Arroyo - Portfolio Personal
 
-```sh
-npm create astro@latest -- --template minimal
-```
+![Portfolio Preview](public/cv-screenshot.jpg) Bienvenido al repositorio de mi portafolio profesional. Este proyecto ha sido diseñado para ser rápido, accesible y visualmente impactante, sirviendo como punto central para mostrar mi experiencia como **Full Stack & AI Developer**.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+🔗 **Demo en vivo:** [https://nilarroyo.vercel.app](https://nilarroyo.vercel.app)
 
-## 🚀 Project Structure
+## 🛠️ Tecnologías
 
-Inside of your Astro project, you'll see the following folders and files:
+Este proyecto aprovecha la arquitectura de "Islas" de Astro para ofrecer un rendimiento máximo con 0 JavaScript innecesario en el cliente.
+
+* **Core:** [Astro](https://astro.build/) (v5) - Para generación estática y rendimiento.
+* **Estilos:** [Tailwind CSS](https://tailwindcss.com/) (v4) - Diseño responsivo y moderno.
+* **Iconos:** `astro-icon` con librerías `simple-icons` y `tabler`.
+* **Componentes:** Integración agnóstica (HTML estático + componentes interactivos puntuales).
+* **Despliegue:** Vercel (CI/CD automático desde GitHub).
+
+## ⚡ Características Clave
+
+* **Rendimiento 100/100:** Optimizado para Core Web Vitals.
+* **Diseño One-Page:** Navegación fluida con `IntersectionObserver` para detectar la sección activa.
+* **Modo Oscuro:** Diseño nativo "Dark Mode" con paleta de colores profesional.
+* **Animaciones CSS:** Efectos de brillo (shine effects), carrusel infinito y transiciones suaves sin librerías pesadas de JS.
+
+
+## 📂 Estructura del Proyecto
 
 ```text
 /
-├── public/
+├── public/          # Assets estáticos (Imágenes, CV, Favicon)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+│   ├── components/  # Componentes UI reutilizables (Hero, Navbar, Projects...)
+│   ├── layouts/     # Layout principal (SEO, Meta tags, Estilos globales)
+│   ├── pages/       # Rutas (index.astro)
+│   └── styles/      # Configuración de Tailwind y CSS global
+└── astro.config.mjs # Configuración del compilador
