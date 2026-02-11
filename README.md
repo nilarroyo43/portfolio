@@ -1,6 +1,7 @@
 # 🚀 Nil Arroyo - Portfolio Personal
 
-![Portfolio Preview](public/cv-screenshot.jpg) Bienvenido al repositorio de mi portafolio profesional. Este proyecto ha sido diseñado para ser rápido, accesible y visualmente impactante, sirviendo como punto central para mostrar mi experiencia como **Full Stack & AI Developer**.
+![Portfolio Preview](public/cv-screenshot.jpg)
+ Bienvenido al repositorio de mi portafolio profesional. Este proyecto ha sido diseñado para ser rápido, accesible y visualmente impactante, sirviendo como punto central para mostrar mi experiencia como **Full Stack & AI Developer**.
 
 🔗 **Demo en vivo:** [https://nilarroyo.vercel.app](https://nilarroyo.vercel.app)
 
